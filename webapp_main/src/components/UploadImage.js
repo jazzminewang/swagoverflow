@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import BrowseButton from 'react-toolbox/lib/button/BrowseButton';
 import fire from '../fire';
 
 const storage = fire.storage();
@@ -45,7 +44,7 @@ class UploadImage extends Component {
   render() {
     return (
       <div className="upload">
-        <BrowseButton onChange={this.update} />
+        <input type="file" onChange={this.update} accept=".jpg, .jpeg, .png"/>
       </div>
     );
   }
