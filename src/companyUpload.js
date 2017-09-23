@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
+import { getFilePaths } from './uploadFunctions';
 // Imports the Google Cloud client library
-import { Storage } from '@google-cloud/storage';
-
 import './App.css';
 
 class companyUpload extends Component {
