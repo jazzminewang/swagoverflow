@@ -1,7 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/webapp_swagoverflow/node_modules/*
+/webapp_main/node_modules/*
 
 # testing
 /coverage
