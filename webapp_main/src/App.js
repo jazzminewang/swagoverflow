@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
+import './styles/welcome_page.css';
 import fire from './fire';
 
 
@@ -24,6 +25,7 @@ class App extends Component {
     fire.database().ref('messages').push( this.inputEl.value );
     this.inputEl.value = ''; // <- clear the input
   }
+
   render() {
     return (
       <div className="container">
@@ -33,7 +35,18 @@ class App extends Component {
             <div className="navbarRight">it's lit</div>
           </div>
           <div className="innerContent">
-            
+
+             {
+             // convert to Component
+             }
+              <div className="welcome">
+                <p>Good to see you.</p>
+
+              </div>
+              <div className="start-company-page">
+                <input className="enter-company" placeholder="My Company"></input>
+                <button className="next-button"> </button>
+              </div>
           </div>
         </div>
       </div>

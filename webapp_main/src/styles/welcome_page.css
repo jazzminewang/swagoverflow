@@ -1,0 +1,72 @@
+.welcome{
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	text-align: center;
+}
+.welcome p{
+	font-size: 8vw;
+	color: black;
+	height: 100%;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 0.2;
+	margin: 0;
+	padding: 0;
+}
+.welcome hr{
+	border-bottom: 1px solid black;
+	padding: 0;
+	width: 65vw;
+	min-width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+textarea, input, button { outline: none; }
+.start-company-page{
+	display: block;
+	width: 100;
+	text-align: center;
+}
+.start-company-page button{
+	color: black;
+	background-color: lightgrey;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	font-size: 100%;
+	border-radius: 80%;
+	text-shadow: rgba(0,0,0,0);
+	box-shadow: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
+	border: 1px solid black;
+	transition: 1s;
+	background-image: url("start.png");
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
+	background-position: 3px 0px;
+	padding-left: 10px;
+	position: 
+}
+.start-company-page button:hover{
+	background-color: orange;
+	color: white;
+	transition: 0.5s;
+}
+
+.enter-company{
+	margin-top: 20vh;
+	width: 40%;
+	min-width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+	text-align: center;
+	color: black;
+	background-color: rgba(0,0,0,0);
+	text-shadow: rgba(0,0,0,0);
+	box-shadow: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
+	font-size: 5vw;
+	border-bottom: 2px solid black;
+}
