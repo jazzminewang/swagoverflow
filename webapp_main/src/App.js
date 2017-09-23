@@ -26,15 +26,17 @@ class App extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.addMessage.bind(this)}>
-        <input type="text" ref={ el => this.inputEl = el }/>
-        <input type="submit"/>
-        <ul>
-          { /* Render the list of messages */
-            this.state.messages.map( message => <li key={message.id}>{message.text}</li> )
-          }
-        </ul>
-      </form>
+      <div className="container">
+        <div className="content">
+          <div className="navbar">
+            <div className="navbarLeft">swagoverflow</div>
+            <div className="navbarRight">it's lit</div>
+          </div>
+          <div className="innerContent">
+            
+          </div>
+        </div>
+      </div>
     );
   }
 }
