@@ -32,8 +32,10 @@ export default class Company extends Component {
     		var img_url = company.logo
 			var click_location = `/${key}`
             if (dest_key == key) {
-                for(var url in this.state.companies[key].swag){
-                    output.push(<Tile image_url={url}/>)        
+                for(var key in this.state.companies[key].swag){
+                    console.log()
+                    // alert()
+                    output.push(<Tile image_url={company.swag.sticker1}/>)        
                 }
             }
 		  } 
@@ -47,6 +49,7 @@ export default class Company extends Component {
         return(
             <div className="wrapper">
                 Company's stickers
+                <br/>
                 {this.renderStickers(company)}
                 <UploadImage />
             </div>
