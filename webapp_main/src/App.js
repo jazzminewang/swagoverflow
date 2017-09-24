@@ -20,9 +20,9 @@ const Routes = () => (
     <div>
       <Route exact path="/" component={App} />    
       <Route exact path="/welcomeCompany" component={CompanyLogin} />  
-      <Route path = "/:company" render={({match}) => ( <Company company={match.params.company} /> )} />
-      <Route path ="/user/:id" component={Browse} />
-      <Route path ="/user/:id/profile" component={Profile} />
+      <Route exact path = "/:company" render={({match}) => ( <Company company={match.params.company} /> )} />
+      <Route exact path ="/user/:id" render={({match}) => ( <Browse user={match.params.id} /> )} />
+      <Route exact path ="/user/:id/profile" render={({match}) => ( <Profile user={match.params.id} /> )} />
       </div>  
   </Router>
 );
