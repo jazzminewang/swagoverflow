@@ -247,15 +247,29 @@ class App extends Component {
           </div>
           <div className="innerContent">
             <div className="contentLeft">
-              <div className="lefthead">Learn, Share, Build</div>
+              <div className="lefthead">Collect, Build, Share</div>
               <div className="left">
-                Each month, over 50 million developers come to Stack Overflow to
-                learn, share their knowledge, and build their careers. Join the
-                world’s largest developer community.
+                Each month, over two thousand hackers go to hackathons to
+                collect, build, and share their swag.
+                <br style={{ paddingTop: '3px' }} />
+                Join the world’s largest swag community.
               </div>
             </div>
             <div className="contentRight">
-              Signup
+              <div className="right">
+                <div className="email">
+                  Join Us
+                </div>
+                <input
+                  type="text"
+                  style={{
+                    borderRadius: '4px',
+                    fontSize: '20px',
+                    padding: '4px',
+                    width: '250px',
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
