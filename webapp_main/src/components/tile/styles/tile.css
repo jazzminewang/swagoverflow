@@ -1,8 +1,23 @@
 .tile{
 	background-color: #fafafb;
-	width: 31vw;
-	height: 31vw;
+	width: 29vw;
+	height: 29vw;
 	min-width: 250px;
 	min-height: 250px;
 	display: inline-block;
+	transition: 0.5s;
+	padding: 1.5vw;
+}
+
+
+.tile:hover{
+	opacity: 0.5;
+	transition: 0.5s;
+}
+
+
+.tile img {
+	max-width: 90%;
+	display: block;
+    margin: 0 auto;
 }

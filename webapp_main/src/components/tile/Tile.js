@@ -7,7 +7,8 @@ class Tile extends Component {
         this.state = {
             image_url: props.image_url,
             display_name: props.display_name,
-            click_location: props.click_location
+            click_location: props.click_location,
+            company_id: props.company_id,
         }
     }
 

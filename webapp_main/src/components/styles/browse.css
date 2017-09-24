@@ -4,5 +4,16 @@
 	margin-left: auto;
 	display: inline-block;
 	text-align: center;
+}
+hr{
+	width: 45vw;
+	min-width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+}
 
+h1{
+	text-align: center;
+	opacity: 0.8;
+	width: 100%;
 }
