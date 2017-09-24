@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import UploadImage from './components/UploadImage.js';
-import fire from './fire.js';
+import UploadImage from './UploadImage.js';
+import fire from '../fire.js';
+import './styles/company.css';
+
 const database = fire.database();
 
 export default class Company extends Component {
@@ -22,9 +24,11 @@ export default class Company extends Component {
 
     render() {
         const { company } = this.props;
+        console.log(company);
         return(
-            <div>
+            <div className="wrapper">
                 {company}'s stickers
+                <UploadImage />
             </div>
 
         )

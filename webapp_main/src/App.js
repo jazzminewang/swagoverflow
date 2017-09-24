@@ -10,7 +10,7 @@ import {
   Link,
   Redirect,
 } from 'react-router-dom';
-import Company from './Company';
+import Company from './components/Company';
 import Browse from './components/Browse';
 import Profile from './components/Profile';
 import CompanyLogin from './components/CompanyLogin';
