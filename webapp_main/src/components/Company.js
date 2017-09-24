@@ -22,6 +22,20 @@ export default class Company extends Component {
         })
     }
 
+    renderStickers() {
+        var output = []
+        
+		for (var key in this.state.companies) {
+		    var company = this.state.companies[key]
+    		var display_name = company.name
+    		var img_url = company.logo
+			var click_location = `/${company.name}`
+	    	output.push(<Tile image_url={img_url} display_name={display_name} click_location={click_location}/>)
+		  } 
+		  
+		return output
+    }
+
     render() {
         const { company } = this.props;
         console.log(company);
