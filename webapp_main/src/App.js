@@ -6,8 +6,9 @@ import _ from 'lodash';
 import UploadImage from './components/UploadImage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Company from './Company';
-import Browse from './Browse';
-import Profile from './Profile';
+import Browse from './components/Browse';
+import Profile from './components/Profile';
+import CompanyLogin from './components/CompanyLogin';
 
 const Home = (props) => {
   console.log(props)
