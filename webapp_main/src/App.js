@@ -4,35 +4,54 @@ import './styles/welcome_page.css';
 import fire from './fire';
 import _ from 'lodash';
 import UploadImage from './components/UploadImage';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 import Company from './Company';
 import Browse from './components/Browse';
 import Profile from './components/Profile';
 import CompanyLogin from './components/CompanyLogin';
 
+import swag from './styles/swag.png';
+
 const database = fire.database();
 
-const Home = (props) => {
-  console.log(props)
-  return <h1>Home</h1>
-}
+const Home = props => {
+  console.log(props);
+  return <h1>Home</h1>;
+};
 
 const Routes = () => (
   <Router>
     <div>
-      <Route exact path="/" component={App} />    
-      <Route exact path="/welcomeCompany" component={CompanyLogin} />  
-      <Route exact path = "/:company" render={({match}) => ( <Company company={match.params.company} /> )} />
-      <Route exact path ="/user/:id" render={({match}) => ( <Browse user={match.params.id} /> )} />
-      <Route exact path ="/user/:id/profile" render={({match}) => ( <Profile user={match.params.id} /> )} />
-      </div>  
+      <Route exact path="/" component={App} />
+      <Route exact path="/welcomeCompany" component={CompanyLogin} />
+      <Route
+        exact
+        path="/:company"
+        render={({ match }) => <Company company={match.params.company} />}
+      />
+      <Route
+        exact
+        path="/user/:id"
+        render={({ match }) => <Browse user={match.params.id} />}
+      />
+      <Route
+        exact
+        path="/user/:id/profile"
+        render={({ match }) => <Profile user={match.params.id} />}
+      />
+    </div>
   </Router>
 );
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       messages: [],
       userEmail: '',
       userId: '',
@@ -54,114 +73,165 @@ class App extends Component {
     });
   }
 
-
-  generate_random_hackers(e){
+  generate_random_hackers(e) {
     e.preventDefault(); // <- prevent form submit from reloading the page
     var Hacker = {
-      "name" : "",
-      "login" : "",
-      "profile" : {
-        "hackathon_ids_attended" : [""],
-        "email" : [""],
-        "roles_looking_for" : ["Software Developer"],
-        "school" : "Michigan",
-        "fun_fact" : "Is l33tHaxor"
+      name: '',
+      login: '',
+      profile: {
+        hackathon_ids_attended: [''],
+        email: [''],
+        roles_looking_for: ['Software Developer'],
+        school: 'Michigan',
+        fun_fact: 'Is l33tHaxor',
       },
-      "taken_image_ids" : [""]
-    }
-    
-    var first_names = ["Emma","Liam","Olivia","Noah","Ava","Lucas","Isabella","Mason","Sophia","Logan","Mia","Oliver","Amelia","Ethan","Charlotte","Elijah","Harper","Aiden","Aria","James","Ella"]
-    var last_names = ["Smith","Johnson","Williams","Brown","Jones","Miller","Wang","Garcia","Wilson","Cho","Anderson","Taylor","Thomas","Hernandez","Moore","Martin","Jackson","Thompson","White"]
+      taken_image_ids: [''],
+    };
 
-    var all_hackers = []
+    var first_names = [
+      'Emma',
+      'Liam',
+      'Olivia',
+      'Noah',
+      'Ava',
+      'Lucas',
+      'Isabella',
+      'Mason',
+      'Sophia',
+      'Logan',
+      'Mia',
+      'Oliver',
+      'Amelia',
+      'Ethan',
+      'Charlotte',
+      'Elijah',
+      'Harper',
+      'Aiden',
+      'Aria',
+      'James',
+      'Ella',
+    ];
+    var last_names = [
+      'Smith',
+      'Johnson',
+      'Williams',
+      'Brown',
+      'Jones',
+      'Miller',
+      'Wang',
+      'Garcia',
+      'Wilson',
+      'Cho',
+      'Anderson',
+      'Taylor',
+      'Thomas',
+      'Hernandez',
+      'Moore',
+      'Martin',
+      'Jackson',
+      'Thompson',
+      'White',
+    ];
+
+    var all_hackers = [];
     for (var i = 0; i < 100; i++) {
       var this_hacker = JSON.parse(JSON.stringify(Hacker));
-      var firs_i = parseInt(Math.random() * first_names.length)
-      var sec_i = parseInt(Math.random() * last_names.length)
-      this_hacker.name = first_names[firs_i] + " " + last_names[sec_i]
-      this_hacker.login = first_names[firs_i] + "." + last_names[sec_i] + "@school.edu"
-      this_hacker.profile.email = this_hacker.login
-      all_hackers.push(this_hacker)
+      var firs_i = parseInt(Math.random() * first_names.length);
+      var sec_i = parseInt(Math.random() * last_names.length);
+      this_hacker.name = first_names[firs_i] + ' ' + last_names[sec_i];
+      this_hacker.login =
+        first_names[firs_i] + '.' + last_names[sec_i] + '@school.edu';
+      this_hacker.profile.email = this_hacker.login;
+      all_hackers.push(this_hacker);
     }
-    console.log(all_hackers)
-    
-
+    console.log(all_hackers);
   }
   generate_random_companies(e) {
     e.preventDefault(); // <- prevent form submit from reloading the page
     var Company = {
-      "name" : "",
-      "logins" : [""],
-      "hackathon_ids_attended" : [""],
-      "hackathons_ids_attending" : [""],
-      "profile" : {
-        "HQ_location" : "",
-        "office_locations" : [""],
-        "logo" : "hi.img",
-        "other_names": [""],
-        "roles_looking_for" : ["Software Developer"]
+      name: '',
+      logins: [''],
+      hackathon_ids_attended: [''],
+      hackathons_ids_attending: [''],
+      profile: {
+        HQ_location: '',
+        office_locations: [''],
+        logo: 'hi.img',
+        other_names: [''],
+        roles_looking_for: ['Software Developer'],
       },
-      "swag_image_ids" : [""]
-
-    }
-    var companies = ["facebook", "google", "baidu", "yelp", "MLH", "Mhacks", "github", "NSA", "Microsoft"]
-    var all_companies = []
+      swag_image_ids: [''],
+    };
+    var companies = [
+      'facebook',
+      'google',
+      'baidu',
+      'yelp',
+      'MLH',
+      'Mhacks',
+      'github',
+      'NSA',
+      'Microsoft',
+    ];
+    var all_companies = [];
     for (var i = 0; i < companies.length; i++) {
       var this_co = JSON.parse(JSON.stringify(Company));
-      this_co.name = companies[i]
-      this_co.logins = ["l33tHackz@" + companies[i] + ".com"]
-      all_companies.push(this_co)
+      this_co.name = companies[i];
+      this_co.logins = ['l33tHackz@' + companies[i] + '.com'];
+      all_companies.push(this_co);
     }
-    return all_companies
+    return all_companies;
   }
 
   make_comp = e => {
     // generate random
-   
-   var output = []
+
+    var output = [];
     // output = generate_random_companies()
 
     for (var i = 0; i < output.length; i++) {
       fire
-      .database()
-      .ref('users')
-      .push(output[i]);
+        .database()
+        .ref('users')
+        .push(output[i]);
     }
-    
   };
 
   // update = _.once(this.make_comp);
 
-  handleUserSubmit = (event) => {
-    console.log("hi! submitted");
+  handleUserSubmit = event => {
+    console.log('hi! submitted');
     event.preventDefault();
     const { userEmail, userId, userData } = this.state;
     console.log(userEmail);
 
-    database.ref('users').once('value').then(snapshot => {
-      snapshot.forEach(function(userSnapshot) {
-        const stringEmail = userEmail.toString(); 
-        debugger;
-        const childData = userSnapshot.val();
-        if (childData.login == stringEmail) {
-          const key = userSnapshot.key;
-          window.location=`/user/${key}`          
-          this.setState({
-            userId: key,
-            userData: childData
-          })
-        } else {
-          //do nothing for now
-        }
-      })
-      })
-  }
+    database
+      .ref('users')
+      .once('value')
+      .then(snapshot => {
+        snapshot.forEach(function(userSnapshot) {
+          const stringEmail = userEmail.toString(); //fuck this is read only
+          debugger;
+          const childData = userSnapshot.val();
+          if (childData.login == stringEmail) {
+            const key = userSnapshot.key;
+            window.location = `/user/${key}`;
+            this.setState({
+              userId: key,
+              userData: childData,
+            });
+          } else {
+            //do nothing for now
+          }
+        });
+      });
+  };
 
-  updateInputValue = (event) => {    
+  updateInputValue = event => {
     this.setState({
-      userEmail: event.target.value
+      userEmail: event.target.value,
     });
-  }
+  };
 
   render() {
     return (
@@ -170,22 +240,22 @@ class App extends Component {
           <div className="navbar">
             <div className="navbarLeft">
               {/* <img src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo.png?v=9c558ec15d8a" className="logo"/> */}
-              swagoverflow
+              <img src={swag} alt="" style={{ paddingRight: '4px' }} />
+              swag<b>overflow</b>
             </div>
-            <div className="navbarRight btn">Login/Signup</div>
+            <div className="navbarRight">Company Portal</div>
           </div>
           <div className="innerContent">
-            <button onClick={this.make_comp} > do this</button>
-      
-            <div className="welcome">
-              <p>Good to see you.</p>
+            <div className="contentLeft">
+              <div className="lefthead">Learn, Share, Build</div>
+              <div className="left">
+                Each month, over 50 million developers come to Stack Overflow to
+                learn, share their knowledge, and build their careers. Join the
+                world’s largest developer community.
+              </div>
             </div>
-            <div className="start-company-page">
-              <form>
-                <input className="enter-company" placeholder="user@school.edu" type="email" name="email" value={this.state.userEmail} onChange={this.updateInputValue}/>
-                <button className="next-button" onClick={this.handleUserSubmit} > </button>
-              </form>
-              <UploadImage />
+            <div className="contentRight">
+              Signup
             </div>
           </div>
         </div>
