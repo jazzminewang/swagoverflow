@@ -4,12 +4,12 @@ import fire from './fire.js';
 const database = fire.database();
 
 export default class Company extends Component {
-    constructor() {
-        super();
-        this.state = {
-            companies: {}
-        }
-    }
+  constructor() {
+    super();
+    this.state = {
+      companies: {},
+    };
+  }
 
     componentDidMount() {
         database.ref('companies').once('value').then(snapshot => {
