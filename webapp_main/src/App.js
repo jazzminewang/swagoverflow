@@ -152,7 +152,7 @@ class App extends Component {
               <p>Good to see you.</p>
             </div>
             <div className="start-company-page">
-              <input className="enter-company" placeholder="My Company" />
+              <input className="enter-company" placeholder="user@school.edu" />
               <button className="next-button"> </button>
               <UploadImage />
             </div>

@@ -67,6 +67,6 @@ textarea, input, button { outline: none; }
 	text-shadow: rgba(0,0,0,0);
 	box-shadow: rgba(0,0,0,0);
 	border-color: rgba(0,0,0,0);
-	font-size: 5vw;
+	font-size: 3vw;
 	border-bottom: 2px solid black;
 }
