@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UploadImage from './UploadImage.js';
 import fire from '../fire.js';
 import './styles/company.css';
+import Tile from './tile/Tile'
 
 const database = fire.database();
 
@@ -29,7 +30,7 @@ export default class Company extends Component {
 		    var company = this.state.companies[key]
     		var display_name = company.name
     		var img_url = company.logo
-			var click_location = `/${company.name}`
+			var click_location = `/${key}`
 	    	output.push(<Tile image_url={img_url} display_name={display_name} click_location={click_location}/>)
 		  } 
 		  
