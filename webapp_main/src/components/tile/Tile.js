@@ -20,11 +20,7 @@ class Tile extends Component {
 
     render() {
         return(
-            <div className="tile" onClick={this.onClick}>
-            	{this.state.image_url}<br/>
-            	{this.state.display_name}<br/>
-            	{this.state.click_location}<br/>
-            </div>
+            <img src={this.state.image_url} className="tile" onClick={this.onClick} />
         )
     }
 }

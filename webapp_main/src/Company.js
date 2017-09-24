@@ -24,7 +24,7 @@ export default class Company extends Component {
         const { company } = this.props;
         return(
             <div>
-                {company}
+                {company}'s stickers
             </div>
 
         )

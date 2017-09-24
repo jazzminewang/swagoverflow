@@ -25,9 +25,9 @@ class Browse extends Component {
 		for (var key in this.state.companies) {
 		    var company = this.state.companies[key]
     		var display_name = company.name
-    		var img_url = company.logo_url
+    		var img_url = company.logo
 			var click_location = `/${company.name}`
-	    	output.push(<Tile src={img_url} display_name={display_name} click_location={click_location}/>)
+	    	output.push(<Tile image_url={img_url} display_name={display_name} click_location={click_location}/>)
 		  } 
 		  
 		return output
