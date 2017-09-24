@@ -39,7 +39,8 @@ export default class Company extends Component {
 
     render() {
         const { company } = this.props;
-        console.log(company);
+        const { companies } = this.state;
+        
         return(
             <div className="wrapper">
                 {company}'s stickers
