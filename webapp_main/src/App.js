@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import './styles/welcome_page.css';
 import fire from './fire';
+import _ from 'lodash';
 import UploadImage from './components/UploadImage';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { messages: [] }; // <- set up react state
+    
+     
+
+
   }
   componentWillMount() {
     /* Create reference to messages in Firebase Database */
@@ -22,15 +27,85 @@ class App extends Component {
       this.setState({ messages: [message].concat(this.state.messages) });
     });
   }
-  addMessage(e) {
+
+  generate_random_hackers(e){
     e.preventDefault(); // <- prevent form submit from reloading the page
-    /* Send the message to Firebase */
-    fire
-      .database()
-      .ref('messages')
-      .push(this.inputEl.value);
-    this.inputEl.value = ''; // <- clear the input
+    var Hacker = {
+      "name" : "",
+      "login" : "",
+      "profile" : {
+        "hackathon_ids_attended" : [""],
+        "email" : [""],
+        "roles_looking_for" : ["Software Developer"],
+        "school" : "Michigan",
+        "fun_fact" : "Is l33tHaxor"
+      },
+      "taken_image_ids" : [""]
+    }
+    
+    var first_names = ["Emma","Liam","Olivia","Noah","Ava","Lucas","Isabella","Mason","Sophia","Logan","Mia","Oliver","Amelia","Ethan","Charlotte","Elijah","Harper","Aiden","Aria","James","Ella"]
+    var last_names = ["Smith","Johnson","Williams","Brown","Jones","Miller","Wang","Garcia","Wilson","Cho","Anderson","Taylor","Thomas","Hernandez","Moore","Martin","Jackson","Thompson","White"]
+
+    var all_hackers = []
+    for (var i = 0; i < 100; i++) {
+      var this_hacker = JSON.parse(JSON.stringify(Hacker));
+      var firs_i = parseInt(Math.random() * first_names.length)
+      var sec_i = parseInt(Math.random() * last_names.length)
+      this_hacker.name = first_names[firs_i] + " " + last_names[sec_i]
+      this_hacker.login = first_names[firs_i] + "." + last_names[sec_i] + "@school.edu"
+      this_hacker.profile.email = this_hacker.login
+      all_hackers.push(this_hacker)
+    }
+    console.log(all_hackers)
+    
+
   }
+  generate_random_companies(e) {
+    e.preventDefault(); // <- prevent form submit from reloading the page
+    var Company = {
+      "name" : "",
+      "logins" : [""],
+      "hackathon_ids_attended" : [""],
+      "hackathons_ids_attending" : [""],
+      "profile" : {
+        "HQ_location" : "",
+        "office_locations" : [""],
+        "logo" : "hi.img",
+        "other_names": [""],
+        "roles_looking_for" : ["Software Developer"]
+      },
+      "swag_image_ids" : [""]
+
+    }
+    var companies = ["facebook", "google", "baidu", "yelp", "MLH", "Mhacks", "github", "NSA", "Microsoft"]
+    var all_companies = []
+    for (var i = 0; i < companies.length; i++) {
+      var this_co = JSON.parse(JSON.stringify(Company));
+      this_co.name = companies[i]
+      this_co.logins = ["l33tHackz@" + companies[i] + ".com"]
+      all_companies.push(this_co)
+    }
+    return all_companies
+  }
+
+  make_comp = e => {
+    // generate random
+   
+   var output = []
+    // output = generate_random_companies()
+
+    for (var i = 0; i < output.length; i++) {
+      fire
+      .database()
+      .ref('users')
+      .push(output[i]);
+    }
+    
+  };
+
+  // update = _.once(this.make_comp);
+
+
 
   render() {
     return (
@@ -41,9 +116,9 @@ class App extends Component {
             <div className="navbarRight">it's lit</div>
           </div>
           <div className="innerContent">
-            {
-              // convert to Component
-            }
+
+            <button onClick={this.make_comp} > do this</button>
+            
             <div className="welcome">
               <p>Good to see you.</p>
             </div>
