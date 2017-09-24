@@ -47,3 +47,75 @@
 		},
 	]
 }
+
+
+// generate_random_hackers(e){
+//     e.preventDefault(); // <- prevent form submit from reloading the page
+//     var Hacker = {
+//       "name" : "",
+//       "login" : "",
+//       "profile" : {
+//         "hackathon_ids_attended" : [""],
+//         "email" : [""],
+//         "roles_looking_for" : ["Software Developer"],
+//         "school" : "Michigan",
+//         "fun_fact" : "Is l33tHaxor"
+//       },
+//       "taken_image_ids" : [""]
+//     }
+    
+//     var first_names = ["Emma","Liam","Olivia","Noah","Ava","Lucas","Isabella","Mason","Sophia","Logan","Mia","Oliver","Amelia","Ethan","Charlotte","Elijah","Harper","Aiden","Aria","James","Ella"]
+//     var last_names = ["Smith","Johnson","Williams","Brown","Jones","Miller","Wang","Garcia","Wilson","Cho","Anderson","Taylor","Thomas","Hernandez","Moore","Martin","Jackson","Thompson","White"]
+
+//     var all_hackers = []
+//     for (var i = 0; i < 100; i++) {
+//       var this_hacker = JSON.parse(JSON.stringify(Hacker));
+//       var firs_i = parseInt(Math.random() * first_names.length)
+//       var sec_i = parseInt(Math.random() * last_names.length)
+//       this_hacker.name = first_names[firs_i] + " " + last_names[sec_i]
+//       this_hacker.login = first_names[firs_i] + "." + last_names[sec_i] + "@school.edu"
+//       this_hacker.profile.email = this_hacker.login
+//       all_hackers.push(this_hacker)
+//     }
+//     console.log(all_hackers)
+    
+
+//   }
+//   generate_random_companies(e) {
+//     e.preventDefault(); // <- prevent form submit from reloading the page
+//     var Company = {
+//       "name" : "",
+//       "logins" : [""],
+//       "hackathon_ids_attended" : [""],
+//       "hackathons_ids_attending" : [""],
+//       "profile" : {
+//         "HQ_location" : "",
+//         "office_locations" : [""],
+//         "logo" : "hi.img",
+//         "other_names": [""],
+//         "roles_looking_for" : ["Software Developer"]
+//       },
+//       "swag_image_ids" : [""]
+
+//     }
+//     var companies = ["facebook", "google", "baidu", "yelp", "MLH", "Mhacks", "github", "NSA", "Microsoft"]
+//     var all_companies = []
+//     for (var i = 0; i < companies.length; i++) {
+//       var this_co = JSON.parse(JSON.stringify(Company));
+//       this_co.name = companies[i]
+//       this_co.logins = ["l33tHackz@" + companies[i] + ".com"]
+//       all_companies.push(this_co)
+//     }
+//     return all_companies
+//   }
+
+//   make_comp = e => {
+//     // generate random
+//    var output = []
+//     for (var i = 0; i < output.length; i++) {
+//       fire
+//       .database()
+//       .ref('users')
+//       .push(output[i]);
+//     }
+//   };
