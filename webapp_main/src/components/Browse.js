@@ -19,17 +19,17 @@ class Browse extends Component {
 		})
 	}
 
-	render_company_logo_tiles(){
+	renderLogoTiles(){
 
 		var output = []
 		for (var key in this.state.companies) {
-		    console.log(this.state.companies[key])
 		    var company = this.state.companies[key]
     		var display_name = company.name
     		var img_url = company.logo_url
-	    	var click_location = "./browse/" + company.name
-	    	output.push(<Tile image_url={img_url} display_name={display_name} click_location={click_location}/>)
+			var click_location = `/${company.name}`
+	    	output.push(<Tile src={img_url} display_name={display_name} click_location={click_location}/>)
 		  } 
+		  
 		return output
 
 	}
@@ -37,11 +37,11 @@ class Browse extends Component {
 	render() {
 		return(
 			<div>
-			USER BROWSE PAGE
-			<br/>
-			<div className="wrapper">
-			{this.render_company_logo_tiles()}
-			</div>
+				Browse
+				<br/>
+				<div className="wrapper">
+					{this.renderLogoTiles()}
+				</div>
 			</div>
 			)
 	}

@@ -11,10 +11,16 @@ class Tile extends Component {
         }
     }
 
+    onClick = (event) => {
+        event.preventDefault();
+        const { click_location } = this.state;
+        window.location = click_location;
+    }
+
 
     render() {
         return(
-            <div className="tile">
+            <div className="tile" onClick={this.onClick}>
             	{this.state.image_url}<br/>
             	{this.state.display_name}<br/>
             	{this.state.click_location}<br/>

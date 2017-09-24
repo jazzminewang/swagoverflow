@@ -140,7 +140,7 @@ class App extends Component {
 
     database.ref('users').once('value').then(snapshot => {
       snapshot.forEach(function(userSnapshot) {
-        const stringEmail = userEmail.toString(); //fuck this is read only
+        const stringEmail = userEmail.toString(); 
         debugger;
         const childData = userSnapshot.val();
         if (childData.login == stringEmail) {
