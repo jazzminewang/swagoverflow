@@ -1,0 +1,10 @@
+.tile{
+	background-color: blue;
+	width: 31vw;
+	height: 31vw;
+	min-width: 250px;
+	min-height: 250px;
+	border: 2px solid green;
+	display: inline-block;
+
+}
