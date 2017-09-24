@@ -11,7 +11,6 @@ export default class Company extends Component {
         }
     }
 
-
     componentDidMount() {
         database.ref('companies').once('value').then(snapshot => {
             const companies = snapshot.val();
@@ -19,10 +18,7 @@ export default class Company extends Component {
                 {companies}
             ),
             console.log(this.state.companies)
-        }
-        )
-
-        
+        })
     }
 
     render() {
