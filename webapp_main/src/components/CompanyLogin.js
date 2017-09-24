@@ -11,7 +11,7 @@ class CompanyLogin extends Component {
 	            </div>
 	            <div className="start-company-page">
 	              <input className="enter-company" placeholder="Best Company" />
-	              <button className="next-button" onClick={}/>
+	              <button className="next-button"></button>
 	              <UploadImage />
 	            </div>
             </div>
