@@ -1,4 +1,5 @@
 import firebase from 'firebase'
+
 var config = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
   apiKey: "AIzaSyBchUfiyzK0xuv1FWRtq00boHFs-xy_d0g",
   authDomain: "swagoverflow-be166.firebaseapp.com",
@@ -7,5 +8,7 @@ var config = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
   storageBucket: "gs://swagoverflow-be664.appspot.com",
   messagingSenderId: "1034769991883"
 };
+
 var fire = firebase.initializeApp(config);
+
 export default fire;

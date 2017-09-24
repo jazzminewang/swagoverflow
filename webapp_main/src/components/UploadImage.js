@@ -11,7 +11,7 @@ class UploadImage extends Component {
     this.state = {
       file: {},
       filename: '',
-    };
+    }
   }
 
   updateUrl = e => {
@@ -42,6 +42,7 @@ class UploadImage extends Component {
   update = _.once(this.updateUrl);
 
   render() {
+    const company = this.props;
     return (
       <div className="upload">
         <input type="file" onChange={this.update} accept=".jpg, .jpeg, .png"/>
