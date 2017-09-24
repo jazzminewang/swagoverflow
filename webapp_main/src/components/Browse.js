@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Tile from "./tile/Tile"
-import "./styles/browser.css"
+import "./styles/browse.css"
 import fire from '../fire';
 
 class Browse extends Component {
@@ -37,8 +37,6 @@ class Browse extends Component {
 	render() {
 		return(
 			<div>
-				Browse
-				<br/>
 				<div className="wrapper">
 					{this.renderLogoTiles()}
 				</div>
