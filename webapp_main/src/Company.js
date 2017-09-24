@@ -16,8 +16,7 @@ export default class Company extends Component {
             const companies = snapshot.val();
             this.setState(
                 {companies}
-            ),
-            console.log(this.state.companies)
+            )
         })
     }
 
@@ -26,7 +25,6 @@ export default class Company extends Component {
         return(
             <div>
                 {company}
-                <UploadImage company={company}/>
             </div>
 
         )
